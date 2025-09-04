@@ -62,9 +62,9 @@ public class ServerGamePacketListenerImplMixin {
                 if (slot.container != container) continue;
                 var stack = slot.getItem();
                 if (!stack.isEmpty() && stack.getItem() == lock.LOCK_ITEM.get()) {
-                    hasAnyLock = true;
                     var tag = stack.getTag();
                     if (tag != null && tag.hasUUID("Owner")) {
+                        hasAnyLock = true;
                         if (tag.getUUID("Owner").equals(player.getUUID())) {
                             hasMyLock = true;
                             break;
